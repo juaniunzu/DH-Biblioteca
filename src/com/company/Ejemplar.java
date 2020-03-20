@@ -23,4 +23,9 @@ public class Ejemplar {
   public String getUbicacion() {
     return ubicacion;
   }
+
+  public String toString(){
+    return this.getLibro().getNombre();
+  }
+
 }

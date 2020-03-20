@@ -42,4 +42,9 @@ public class Socio {
   public Integer getNumeroIdentificacion() {
     return numeroIdentificacion;
   }
+
+  public List<Ejemplar> informarLibrosAlquilados(){
+    System.out.println("El socio " + this.numeroIdentificacion + " tiene en su poder: " + this.ejemplaresRetirados);
+    return this.ejemplaresRetirados;
+  }
 }

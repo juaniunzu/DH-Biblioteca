@@ -1,7 +1,5 @@
 package com.company;
 
-import sun.java2d.loops.Blit;
-import sun.java2d.loops.BlitBg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +14,14 @@ public class Biblioteca {
     this.listaDeLibros = new ArrayList<Libro>();
     this.listaDeSocios = new ArrayList<Socio>();
     this.listaDePrestamos = new ArrayList<Prestamo>();
+  }
+
+  public void agregarSocio(Socio unSocio){
+    this.listaDeSocios.add(unSocio);
+  }
+
+  public void agregarLibro(Libro unLibro){
+    this.listaDeLibros.add(unLibro);
   }
 
   public void prestar(Integer ISBN, Integer numeroDeIdentificacion){
@@ -100,6 +106,9 @@ public class Biblioteca {
     return socioBuscado;
   }
 
+  public void informarListaDeLibros(){
+    System.out.println(this.listaDeLibros);
+  }
 
 
 }
