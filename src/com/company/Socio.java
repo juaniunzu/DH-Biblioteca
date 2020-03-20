@@ -19,6 +19,18 @@ public class Socio {
     this.ejemplaresRetirados = new ArrayList<Ejemplar>();
   }
 
+  public Boolean tieneCupoDisponible(){
+    return (this.ejemplaresRetirados.size() < this.LIBROS_AUTORIZADOS_A_RETIRAR);
+  }
+
+  public void tomarPrestadoUnEjemplar(Ejemplar unEjemplar){
+    this.ejemplaresRetirados.add(unEjemplar);
+  }
+
+  public void devolverUnEjemplar(Ejemplar unEjemplar){
+    this.ejemplaresRetirados.remove(unEjemplar);
+  }
+
   public String getNombre() {
     return nombre;
   }
