@@ -27,10 +27,19 @@ public class Biblioteca {
       Ejemplar ejemplarAPrestar = libroAPrestar.prestarEjemplar();
       socioQueRetira.tomarPrestadoUnEjemplar(ejemplarAPrestar);
       Prestamo unPrestamo = new Prestamo(ejemplarAPrestar, socioQueRetira);
+      this.listaDePrestamos.add(unPrestamo);
       System.out.println("El socio " + socioQueRetira.getNumeroIdentificacion() + " retira el ejemplar " + ejemplarAPrestar.getLibro().getNombre());
     } else {
       System.out.println("No es posible realizar el préstamo solicitado");
     }
+  }
+
+  public void prestar(List<Integer> unaListaDelISBN, Integer unNumeroDeIdentificacion){
+
+    for (Integer isbn : unaListaDelISBN) {
+      prestar(isbn, unNumeroDeIdentificacion);
+    }
+
   }
 
   public void devolver(Ejemplar unEjemplar, Integer numeroDeIdentificacion){
@@ -44,6 +53,15 @@ public class Biblioteca {
       System.out.println("Reingresa a la biblioteca el ejemplar " + unEjemplar.getLibro());
     }
   }
+
+  public void devolver(List<Ejemplar> ejemplares, Integer unNumeroDeIdentificacion){
+
+    for (Ejemplar ejemplar : ejemplares) {
+      devolver(ejemplar, unNumeroDeIdentificacion);
+    }
+
+  }
+
 
 
   private Libro buscarLibroEnBiblioteca(Ejemplar unEjemplar){
