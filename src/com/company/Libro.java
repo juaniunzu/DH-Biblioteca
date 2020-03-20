@@ -45,4 +45,20 @@ public class Libro {
   public String getAutor() {
     return autor;
   }
+
+  @Override
+  public boolean equals(Object o){
+    if(this == o) return true;
+    if(o == null) return false;
+    if(!(o instanceof Libro)) return false;
+
+    Libro libroAComparar = (Libro) o;
+    return (this.codigoIsbn.equals(libroAComparar.getCodigoIsbn()));
+
+  }
+
+  @Override
+  public String toString() {
+    return this.getNombre();
+  }
 }
