@@ -17,12 +17,21 @@ public class Libro {
     this.listaDeEjemplares = new ArrayList<Ejemplar>();
   }
 
-  public void agregarEjemplar(Ejemplar unEjemplar){
+  public void agregarNuevoEjemplar(Ejemplar unEjemplar){
     this.listaDeEjemplares.add(unEjemplar);
   }
 
-  public void quitarEjemplar(Ejemplar unEjemplar){
-    this.listaDeEjemplares.remove(unEjemplar);
+  public Boolean tieneEjemplaresDisponibles(){
+    return(this.listaDeEjemplares.size() != 0);
+  }
+
+  public Ejemplar prestarEjemplar(){
+    Ejemplar ejemplarAPrestar = this.listaDeEjemplares.remove(0);
+    return ejemplarAPrestar;
+  }
+
+  public void reingresarEjemplar(Ejemplar unEjemplar){
+    agregarNuevoEjemplar(unEjemplar);
   }
 
   public String getNombre() {
